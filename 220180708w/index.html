@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>jQuery練習＠授業</title>
+
+<style>
+  .box2{
+    background-color: #e99506;
+  }
+  .box3{
+    background-color: #a1da8d;
+    width:300px;
+    height:300px;
+  }
+</style>
+
+</head>
+<body>s
+  <h1 class="first">こんにちは</h1>
+<button type="button" name="button" class="bt1">画面を表示</button>
+<h2 class="bt2">コンテンツを表示</h2>
+<h2 class="bt3">アニメーションさせる</h2>
+<div class="box3">ボックス3</div>
+<p class="box2">ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト
+ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト
+ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト</p>
+  <br><img src="" alt="" class="img1">
+
+
+<!--jQuery-->
+  <script src="jquery-3.3.1.min.js"></script> <!--jsをフォルダに入れて読み込むと動作-->
+  <script type="text/javascript">
+  $(function(){
+    <!--firsのcss赤字にする-->
+    $(".first").css("color","#ff0000");
+    $(".first").click(function(){　<!--first内をクリックfunctionしたら-->
+      <!--alert("クリックしたね");　アラートが出る-->
+      $(".first").css("color","#000000");
+      $(".this").css("font-size","35px"); <!--firstをthisで省略-->
+    });
+    <!--画像を表示-->
+    $(".bt1").click(function(){ <!--bt1がクリックされたら-->
+      $(".img1").attr("src","flower.jpg"); <!--クリックされたら画像が出る。attrは属性を変える-->
+    });
+    <!--コンテンツの開閉-->
+    $(".bt2").click(function(){
+      $(".box2").slideToggle();
+    });
+    <!--アニメーションする-->
+    $(".bt3").click(function(){ <!--bt3をクリックしたら-->
+      $(".box3").animate({
+        marginLeft:"400px"<!--マージン左を400に増やし、２秒かけて移動させる-->
+      },2000, "swing").animate({
+        width:"300px"
+      },500, "swing")　<!--０.６秒で３００px伸ばす-->
+    });
+    <!---->
+
+
+
+
+  });
+  </script>
+</body>
+</html>
